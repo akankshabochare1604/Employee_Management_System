@@ -1,1 +1,1 @@
-Connecting the frontend and backend using servlet 
+Employee management system project using JDBC , servlet
