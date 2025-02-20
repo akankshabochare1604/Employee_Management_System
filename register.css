@@ -1,0 +1,81 @@
+/* APPLYING BACKGROUND TO THE ENTIRE PAGE */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #8360c3, #2ebf91);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures background covers full content */
+    margin: 0;
+    padding: 20px; /* Allows some spacing */
+}
+
+/* FORM STYLING */
+form {
+    width: 40%;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.10); /* Glassmorphism effect */
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* FORM TITLE */
+h1 {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* INPUT FIELD STYLING */
+/*input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    font-size: 16px;
+    background: linear-gradient(to right, #8360c3, #2ebf91); 
+     transition: 0.3s ease-in-out;
+}*/
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2); /* Soft translucent white */
+    color: #fff; /* White text */
+    
+    transition: 0.3s ease-in-out;
+}
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+input:focus {
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, 0.3); /* Slightly brighter on focus */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* BUTTON STYLING */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(to right, #0056b3, #003f80);
+}
