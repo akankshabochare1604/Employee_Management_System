@@ -38,6 +38,8 @@ public class EmployeesRegister extends HttpServlet {
 		String country=req.getParameter("country");
 		String marital_status=req.getParameter("marital_status");
 		String password=req.getParameter("password");
+
+		PrintWriter out=resp.getWriter();
 		
 		//database connection
 		try{
@@ -62,10 +64,14 @@ public class EmployeesRegister extends HttpServlet {
 			ps.setString(14, country);
 			ps.setString(15, marital_status);
 			ps.setString(16, password);
-			ps.executeUpdate();
 			
-			PrintWriter out=resp.getWriter();
-			out.println("<h1>"+"Data inserted successfully!!"+"</h1>");
+			int rowsInserted = ps.executeUpdate(); // Execute SQL statement
+
+			if (rowsInserted > 0) {
+				out.print("<h1>Data successfully inserted</h1>");
+			} else {
+				out.print("<h1>Data insertion failed</h1>");
+			}
 			
 			
 		}catch(Exception e) {
