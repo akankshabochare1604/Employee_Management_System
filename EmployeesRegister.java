@@ -64,16 +64,17 @@ public class EmployeesRegister extends HttpServlet {
 			ps.setString(14, country);
 			ps.setString(15, marital_status);
 			ps.setString(16, password);
-			
-			int rowsInserted = ps.executeUpdate(); // Execute SQL statement
+			 ps.executeUpdate();
+			// int rowsInserted = ps.executeUpdate(); // Execute SQL statement
 
-			if (rowsInserted > 0) {
-				out.print("<h1>Data successfully inserted</h1>");
-			} else {
-				out.print("<h1>Data insertion failed</h1>");
-			}
+			// if (rowsInserted > 0) {
+			// 	out.print("<h1>Data successfully inserted</h1>");
+			// } else {
+			// 	out.print("<h1>Data insertion failed</h1>");
+			// }
 			
-			
+			RequestDispatcher rd= req.getRequestDispatcher("/login.html");
+			rd.forward(req, resp);
 		}catch(Exception e) {
 			
 		}
