@@ -48,6 +48,7 @@ public class EmployeesRegister extends HttpServlet {
 			PreparedStatement ps=c.prepareStatement("insert into employee"
 					+ "(fname,lname,gender,email,mobno,dob,age,salary,role,join_date,experience,city,state,country,marital_status,password)"
 					+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			//executing sql query to insert data indo db
 			ps.setString(1, fname);
 			ps.setString(2, lname);
 			ps.setString(3, gender);
@@ -65,6 +66,7 @@ public class EmployeesRegister extends HttpServlet {
 			ps.setString(15, marital_status);
 			ps.setString(16, password);
 			 ps.executeUpdate();
+			c.close(); //closing resources
 			// int rowsInserted = ps.executeUpdate(); // Execute SQL statement
 
 			// if (rowsInserted > 0) {
@@ -73,7 +75,7 @@ public class EmployeesRegister extends HttpServlet {
 			// 	out.print("<h1>Data insertion failed</h1>");
 			// }
 			
-			RequestDispatcher rd= req.getRequestDispatcher("/login.html");
+			RequestDispatcher rd= req.getRequestDispatcher("/login.html"); //afetr successfull registration directing to login page
 			rd.forward(req, resp);
 		}catch(Exception e) {
 			
