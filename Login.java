@@ -55,6 +55,7 @@ public class Login extends HttpServlet{
 				RequestDispatcher rd=req.getRequestDispatcher("/EmployeesRegister.html");
 				rd.include(req, resp);
 			}
+			c.close();
 		}catch(Exception e) {
 			
 		}
