@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,7 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/empinfo")
-public class EmployeesRegister extends HttpServlet {
+public class Add_Employee extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// frontend backend connection
@@ -38,9 +39,9 @@ public class EmployeesRegister extends HttpServlet {
 		String country=req.getParameter("country");
 		String marital_status=req.getParameter("marital_status");
 		String password=req.getParameter("password");
-
-		PrintWriter out=resp.getWriter();
 		
+		
+		PrintWriter out=resp.getWriter();
 		//database connection
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -48,7 +49,6 @@ public class EmployeesRegister extends HttpServlet {
 			PreparedStatement ps=c.prepareStatement("insert into employee"
 					+ "(fname,lname,gender,email,mobno,dob,age,salary,role,join_date,experience,city,state,country,marital_status,password)"
 					+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-			//executing sql query to insert data indo db
 			ps.setString(1, fname);
 			ps.setString(2, lname);
 			ps.setString(3, gender);
@@ -65,18 +65,22 @@ public class EmployeesRegister extends HttpServlet {
 			ps.setString(14, country);
 			ps.setString(15, marital_status);
 			ps.setString(16, password);
-			 ps.executeUpdate();
-			c.close(); //closing resources
-			// int rowsInserted = ps.executeUpdate(); // Execute SQL statement
-
-			// if (rowsInserted > 0) {
-			// 	out.print("<h1>Data successfully inserted</h1>");
-			// } else {
-			// 	out.print("<h1>Data insertion failed</h1>");
-			// }
+			int rowInserted=ps.executeUpdate();
 			
-			RequestDispatcher rd= req.getRequestDispatcher("/login.html"); //afetr successfull registration directing to login page
-			rd.forward(req, resp);
+			if(rowInserted>0) {
+			out.println("<script>alert('Employee Added successfully!!');window.location.href='login.html';</script>");
+//			RequestDispatcher rd= req.getRequestDispatcher("/login.html");
+//			rd.forward(req, resp);
+			}
+			else {
+				out.println("<script>alert('Failed to insert data..');window.location.href='login.html';</script>");
+//				RequestDispatcher rd= req.getRequestDispatcher("/add_emp.html");
+//				rd.forward(req, resp);
+//				
+			}
+			
+			
+			
 		}catch(Exception e) {
 			
 		}
