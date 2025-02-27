@@ -51,16 +51,16 @@ Here are some previews of the application:
 
 
 
-![Index Page](screenshots/index.png)
-![Signup Page](screenshots/signup.png)
-![Login Page](screenshots/login.png)
-![Home Page](screenshots/homepage.png)
-![Add Employee](screenshots/add_emp.png)
-![Employee Profile Login](screenshots/loginempprofile.png)
-![View Profile](screenshots/profile.png)
-![Edit Profile](screenshots/edit.png)
-![Delete Profile](screenshots/delete.png)
-![Employee List](screenshots/viewall.png)
+![Index Page](index.png)
+![Signup Page](signup.png)
+![Login Page](login.png)
+![Home Page](homepage.png)
+![Add Employee](add_emp.png)
+![Employee Profile Login](loginempprofile.png)
+![View Profile](profile.png)
+![Edit Profile](edit.png)
+![Delete Profile](delete.png)
+![Employee List](viewall.png)
 
 ## 📌 Setup Instructions
 ### 1⃣ Clone the Repository
