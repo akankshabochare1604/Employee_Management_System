@@ -103,9 +103,16 @@ body {
 <div class="sidebar">
     <div class="logo">Employee Management System</div>
     <ul class="nav-links">
+    	<li><a href="add_emp.html">Add New Employee</a></li>
+    	<li><a href="login.html">Login to Existing Employees Profile</a></li>
+    	 	<li><a href="Employees.jsp">View All Employees</a></li>
         <li><a href="profile.jsp">Profile</a></li>
-        <li><a href="EmployeesRegister.html">Register</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Register</a></li>
+        <li><a href="admin_login.html">Login</a></li>
+        
+        <li><a href="Logout.java">Logout</a></li>
+        
+        
     </ul>
 </div>
 
@@ -143,7 +150,18 @@ body {
 <br>
 <h3>Marital Status: ${marital_status}</h3>
 <br>
-<span><button>Update Profile</button>  <button>Delete Profile</button></span>
-
+<span> 
+    <a href="update.html">
+        <button style="background-color: blue; color: white; height: 30px; width: 120px; padding: 5px; border: none; border-radius: 5px; cursor: pointer;">
+            Update Profile
+        </button>
+    </a>  
+    <a href="DeleteEmp.html">
+        <button style="background-color: red; color: white; height: 30px; width: 120px; padding: 5px; border: none; border-radius: 5px; cursor: pointer;">
+            Delete Profile
+        </button>
+    </a>
+</span>
+</div>
 </body>
 </html>
