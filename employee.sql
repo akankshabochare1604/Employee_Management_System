@@ -1,3 +1,5 @@
+create database employee_management_system;
+
 create table employee
 (emp_id int primary key auto_increment,
 fname varchar(30)not null,
@@ -16,3 +18,10 @@ city varchar(30)not null,
 country varchar(30)not null,
 marital_status varchar(20)not null
 ,password varchar(8));
+
+create table admin
+(id int primary key auto_increment,
+ name varchar(20),
+ email varchar(50)unique,
+ mobile_number mediumtext ,
+ password varchar(8));
