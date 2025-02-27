@@ -51,7 +51,7 @@ Here are some previews of the application:
 
 
 
-![Index Page](index.png)
+![Index Page](index.png.png)
 ![Signup Page](signup.png)
 ![Login Page](login.png)
 ![Home Page](homepage.png)
